@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap");
-@import 'variaveis.scss';
+@import "variaveis.scss";
 
 html,
 body {
@@ -11,4 +11,13 @@ body {
 * {
     font-family: "Montserrat", sans-serif;
     box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+
+    &-center {
+        justify-content: center;
+        align-items: center;
+    }
 }
