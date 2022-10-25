@@ -1,0 +1,63 @@
+@import "variaveis";
+
+$h-spotify-logo: 120px;
+$h-menu-opcoes: 150px;
+$m-entre-menus: 10px;
+
+:host {
+    max-width: 300px;
+    min-height: 100vh;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: $cor-fundo2;
+    box-shadow: 1px 0 15px #00000012;
+
+    .menus {
+        flex-grow: 1;
+        flex-direction: column;
+        height: 100%;
+        padding: 0 40px;
+
+        .image-container {
+            min-height: $h-spotify-logo;
+
+            img {
+                width: 70%;
+            }
+        }
+
+        .menu-container {
+            width: 100%;
+
+            &.flex {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            &.opcoes {
+                min-height: 150px;
+
+                * {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .playlist-titulo {
+                margin: 10px 0;
+                align-self: flex-start;
+                font-weight: 700;
+                font-size: .7rem;
+                color: $preto-transparent-30;
+            }
+
+            .playlist-scroll {
+                width: 100%;
+
+                * {
+                    margin-bottom: $m-entre-menus;
+                }
+            }
+        }
+    }
+}

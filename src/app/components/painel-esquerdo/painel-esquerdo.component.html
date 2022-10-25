@@ -1,0 +1,40 @@
+<div class="menus flex">
+    <div class="image-container flex flex-center">
+        <img src="assets/images/spotify-logo.png"
+             alt="">
+    </div>
+
+    <div class="menu-container flex opcoes">
+        <app-botao-menu [descricao]="'Home'"
+                        [icone]="homeIcone"
+                        [selecionado]="menuSelecionado === 'Home'"
+                        (click)="botaoClick('Home')">
+        </app-botao-menu>
+        <app-botao-menu [descricao]="'Pesquisar'"
+                        [icone]="pesquisarIcone"
+                        [selecionado]="menuSelecionado === 'Pesquisar'"
+                        (click)="botaoClick('Pesquisar')">
+        </app-botao-menu>
+        <app-botao-menu [descricao]="'Artistas'"
+                        [icone]="artistaIcone"
+                        [selecionado]="menuSelecionado === 'Artistas'"
+                        (click)="botaoClick('Artistas')">
+        </app-botao-menu>
+    </div>
+
+    <div class="menu-container flex">
+        <span class="playlist-titulo">
+            PLAYLIST
+        </span>
+
+        <div class="playlist-scroll">
+            <app-botao-menu [icone]="playlistIcone"
+                            [descricao]="'Play 1'"
+                            [selecionado]="menuSelecionado === 'Play1'"
+                            (click)="botaoClick('Play1')"></app-botao-menu>
+        </div>
+    </div>
+</div>
+<div class="usuario-info">
+
+</div>
