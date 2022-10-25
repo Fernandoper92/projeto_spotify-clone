@@ -1,4 +1,4 @@
-import { IPlaylist } from "../interfaces/iPlaylist";
+import { IPlaylist } from "../interfaces/IPlaylist";
 import { IUsuario } from "../interfaces/IUsuario";
 
 export function spotifyUserParaUsuario(user: SpotifyApi.CurrentUsersProfileResponse,): IUsuario {
