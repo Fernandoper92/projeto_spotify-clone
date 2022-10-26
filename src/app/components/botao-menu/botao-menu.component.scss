@@ -4,6 +4,16 @@
     display: block;
     width: 100%;
 
+    &.opcao-ativa > button {
+        background-color: $cor-primaria;
+        color: $branco;
+    }
+
+    &.playlist-ativa > button {
+        color: $cor-primaria-escura;
+        font-weight: bold;
+    }
+
     button {
         width: 100%;
         border: 0;
@@ -15,11 +25,6 @@
         color: $cor-primaria;
         background-color: transparent;
         cursor: pointer;
-
-        &.selecionado {
-            background-color: $cor-primaria;
-            color: $branco;
-        }
 
         span {
             display: inline-block;

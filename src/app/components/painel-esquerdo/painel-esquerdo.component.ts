@@ -10,8 +10,6 @@ import { SpotifyService } from 'src/app/services/spotify.service';
 })
 export class PainelEsquerdoComponent implements OnInit {
 
-  menuSelecionado = 'Home';
-
   playlists: IPlaylist[] = [];
 
   //Icones
@@ -27,12 +25,7 @@ export class PainelEsquerdoComponent implements OnInit {
     this.buscarPlaylists();
   }
 
-  botaoClick(botao: string) {
-    this.menuSelecionado = botao;
-  }
-
   async playlistClick(playlist: IPlaylist) {
-    this.menuSelecionado = playlist.id;
   }
 
   async buscarPlaylists() {
