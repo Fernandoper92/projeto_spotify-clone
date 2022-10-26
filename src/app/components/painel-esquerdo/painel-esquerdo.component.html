@@ -1,41 +1,47 @@
 <div class="menus flex">
-    <div class="image-container flex flex-center">
-        <img src="assets/images/spotify-logo.png"
-             alt="">
-    </div>
+  <div class="image-container flex flex-center">
+    <img src="assets/images/spotify-logo.png" alt="" />
+  </div>
 
-    <div class="menu-container flex opcoes">
-        <app-botao-menu [descricao]="'Home'"
-                        [icone]="homeIcone"
-                        [selecionado]="menuSelecionado === 'Home'"
-                        (click)="botaoClick('Home')">
-        </app-botao-menu>
-        <app-botao-menu [descricao]="'Pesquisar'"
-                        [icone]="pesquisarIcone"
-                        [selecionado]="menuSelecionado === 'Pesquisar'"
-                        (click)="botaoClick('Pesquisar')">
-        </app-botao-menu>
-        <app-botao-menu [descricao]="'Artistas'"
-                        [icone]="artistaIcone"
-                        [selecionado]="menuSelecionado === 'Artistas'"
-                        (click)="botaoClick('Artistas')">
-        </app-botao-menu>
-    </div>
+  <div class="menu-container flex opcoes">
+    <app-botao-menu
+      [descricao]="'Home'"
+      [icone]="homeIcone"
+      routerLinkActive="opcao-ativa"
+      [routerLink]="['home']"
+    >
+    </app-botao-menu>
+    <app-botao-menu
+      [descricao]="'Pesquisar'"
+      [icone]="pesquisarIcone"
+      routerLinkActive="opcao-ativa"
+      [routerLink]="['pesquisar']"
+    >
+    </app-botao-menu>
+    <app-botao-menu
+      [descricao]="'Artistas'"
+      [icone]="artistaIcone"
+      routerLinkActive="opcao-ativa"
+      [routerLink]="['artistas']"
+    >
+    </app-botao-menu>
+  </div>
 
-    <div class="menu-container flex playlists">
-        <span class="playlist-titulo">
-            PLAYLIST
-        </span>
+  <div class="menu-container flex playlists">
+    <span class="playlist-titulo"> PLAYLIST </span>
 
-        <div class="playlist-scroll">
-            <app-botao-menu *ngFor="let playlist of playlists"
-                            [icone]="playlistIcone"
-                            [descricao]="playlist.nome"
-                            [selecionado]="menuSelecionado === playlist.id"
-                            (click)="playlistClick(playlist)"></app-botao-menu>
-        </div>
+    <div class="playlist-scroll">
+      <app-botao-menu
+        *ngFor="let playlist of playlists"
+        [icone]="playlistIcone"
+        [descricao]="playlist.nome"
+        routerLinkActive="playlist-ativa"
+        [routerLink]="['playlist', playlist.id]"
+        (click)="playlistClick(playlist)"
+      ></app-botao-menu>
     </div>
+  </div>
 </div>
 <div class="usuario-info">
-    <app-rodape-usuario></app-rodape-usuario>
+  <app-rodape-usuario></app-rodape-usuario>
 </div>
